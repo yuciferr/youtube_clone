@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
+import 'package:youtube_clone/screens/personal_page/personal_page_home.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -26,10 +27,7 @@ class _BottomNavState extends State<BottomNav> {
       'Index 2: Add',
       style: optionStyle,
     ),
-    Text(
-      'Index 3: Subscriptions',
-      style: optionStyle,
-    ),
+    PersonalPageHome(),
     Text(
       'Index 4: Library',
       style: optionStyle,
