@@ -7,4 +7,5 @@ class MyColors {
   static const Color blueTextButton = Color(0xFF5CA4F8);
   static const Color redButton = Color(0xFFBB2619);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color grey = Color(0xFFD9D9D9);
 }
