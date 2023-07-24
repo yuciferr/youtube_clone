@@ -16,27 +16,102 @@ class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    Text(
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeScreen(),
+    const Text(
       'Index 1: Shorts',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: Add',
-      style: optionStyle,
-    ),
-    SubscriptionsScreen(),
-    Text(
+    Container(),
+    const SubscriptionsScreen(),
+    const Text(
       'Index 4: Library',
       style: optionStyle,
     ),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (index == 2) {
+      // Show the bottom modal sheet
+      _showBottomModalSheet(context);
+    } else {
+      // Switch to other screens
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
+  }
+
+  void _showBottomModalSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return ColoredBox(
+          color: MyColors.greyButton,
+          child: SizedBox(
+            height: 330,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(13.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Create',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.close,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                createBottomSheetActionForRow(
+                    MyImageStrings.shortsInactiveButtonImageBottomNav,
+                    'Create a Short'),
+                createBottomSheetActionForRow(
+                    MyImageStrings.bottomSheetUploadAVideo, 'Upload a Video'),
+                createBottomSheetActionForRow(
+                    MyImageStrings.bottomSheetGoLive, 'Go live'),
+                createBottomSheetActionForRow(
+                    MyImageStrings.bottomSheetCreateAPost, 'Create a Post'),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  ListTile createBottomSheetActionForRow(
+      String imageString, String titleOfAction) {
+    return ListTile(
+      onTap: () {},
+      leading: CircleAvatar(
+        radius: 25,
+        backgroundColor: MyColors.greyVideo,
+        child: CircleAvatar(
+          backgroundColor: MyColors.greyButton,
+          radius: 14, // Orijinal fotoğraf çapı
+          backgroundImage: AssetImage(imageString),
+        ),
+      ),
+      title: Text(
+        titleOfAction,
+        style: const TextStyle(color: Colors.white, fontSize: 20.0),
+      ),
+    );
   }
 
   @override
