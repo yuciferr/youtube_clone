@@ -62,9 +62,12 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logo/
+    - assets/images/dummy_data_channels_subscribed/
     - assets/icons/
     - assets/icons/navbar_icons/active/
     - assets/icons/navbar_icons/inactive/
+    - assets/icons/appbar_icons/
+
   # To add assets to your application, add an assets section, like this:
 
 

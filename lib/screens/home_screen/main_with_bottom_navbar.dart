@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
-import 'package:youtube_clone/screens/personal_page/personal_page_home.dart';
+import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
+
+import 'home_screen.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -15,10 +17,7 @@ class _BottomNavState extends State<BottomNav> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    HomeScreen(),
     Text(
       'Index 1: Shorts',
       style: optionStyle,
@@ -27,7 +26,9 @@ class _BottomNavState extends State<BottomNav> {
       'Index 2: Add',
       style: optionStyle,
     ),
-    PersonalPageHome(),
+
+    SubscriptionsScreen(),
+
     Text(
       'Index 4: Library',
       style: optionStyle,
@@ -50,23 +51,23 @@ class _BottomNavState extends State<BottomNav> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage(MyImageStrings.homeInactiveButtonImage),
+              AssetImage(MyImageStrings.homeInactiveButtonImageBottomNav),
               color: Colors.white,
             ),
             backgroundColor: MyColors.blackMain,
             activeIcon: ImageIcon(
-              AssetImage(MyImageStrings.homeActiveButtonImage),
+              AssetImage(MyImageStrings.homeActiveButtonImageBottomNav),
               color: Colors.white,
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage(MyImageStrings.shortsInactiveButtonImage),
+              AssetImage(MyImageStrings.shortsInactiveButtonImageBottomNav),
               color: Colors.white,
             ),
             activeIcon: ImageIcon(
-              AssetImage(MyImageStrings.shortsActiveButtonImage),
+              AssetImage(MyImageStrings.shortsActiveButtonImageBottomNav),
               color: Colors.white,
             ),
             backgroundColor: MyColors.blackMain,
@@ -74,11 +75,11 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage(MyImageStrings.addInactiveButtonImage),
+              AssetImage(MyImageStrings.addInactiveButtonImageBottomNav),
               color: Colors.white,
             ),
             activeIcon: ImageIcon(
-              AssetImage(MyImageStrings.addInactiveButtonImage),
+              AssetImage(MyImageStrings.addInactiveButtonImageBottomNav),
               color: Colors.red,
             ),
             backgroundColor: MyColors.blackMain,
@@ -86,11 +87,13 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage(MyImageStrings.subscriptionInactiveButtonImage),
+              AssetImage(
+                  MyImageStrings.subscriptionInactiveButtonImageBottomNav),
               color: Colors.white,
             ),
             activeIcon: ImageIcon(
-              AssetImage(MyImageStrings.subscriptionsActiveButtonImage),
+              AssetImage(
+                  MyImageStrings.subscriptionsActiveButtonImageBottomNav),
               color: Colors.white,
             ),
             backgroundColor: MyColors.blackMain,
@@ -98,11 +101,11 @@ class _BottomNavState extends State<BottomNav> {
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(
-              AssetImage(MyImageStrings.libraryInactiveButtonImage),
+              AssetImage(MyImageStrings.libraryInactiveButtonImageBottomNav),
               color: Colors.white,
             ),
             activeIcon: ImageIcon(
-              AssetImage(MyImageStrings.libraryActiveButtonImage),
+              AssetImage(MyImageStrings.libraryActiveButtonImageBottomNav),
               color: Colors.white,
             ),
             backgroundColor: MyColors.blackMain,
