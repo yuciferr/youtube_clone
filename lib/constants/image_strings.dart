@@ -43,4 +43,14 @@ class MyImageStrings {
   static const String dummyDataChannelSerhanImage =
       'assets/images/dummy_data_channels_subscribed/serhan.jpg';
   static const String dummyDataChannelBtAkdenizImage = 'assets/images/1.jpg';
+
+  // bottom model sheet
+  static const String bottomSheetCreateAPost =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_create_a_post.png';
+  static const String bottomSheetCreateAShorts =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_create_a_short.png';
+  static const String bottomSheetGoLive =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_go_live.png';
+  static const String bottomSheetUploadAVideo =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_upload_a_video.png';
 }
