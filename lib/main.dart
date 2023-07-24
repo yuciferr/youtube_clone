@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/constants/colors.dart';
+
+import 'screens/personal_page/personal_page_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -23,8 +27,71 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        backgroundColor: MyColors.blackMain,
+        scaffoldBackgroundColor: MyColors.blackMain,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: MyColors.blackMain,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            color: MyColors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        textTheme: const TextTheme(
+          headline1: TextStyle(
+            color: MyColors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+          headline2: TextStyle(
+            color: MyColors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+          headline3: TextStyle(
+            color: MyColors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+          headline4: TextStyle(
+            color: MyColors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+          ),
+          headline5: TextStyle(
+            color: MyColors.white,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
+          ),
+          headline6: TextStyle(
+            color: MyColors.white,
+            fontSize: 10,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyText1: TextStyle(
+            color: MyColors.white,
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+          bodyText2: TextStyle(
+            color: MyColors.white,
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        accentColor: MyColors.blueTextButton,
+        buttonTheme: const ButtonThemeData(
+          buttonColor: MyColors.redButton,
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(4),
+            ),
+          ),
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const PersonalPageHome(),
     );
   }
 }
