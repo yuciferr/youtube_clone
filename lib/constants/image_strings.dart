@@ -31,6 +31,7 @@ class MyImageStrings {
   static const String appBarUserProfileImage =
       'assets/icons/appbar_icons/user.png';
   static const String appBarYoutubeLogo = 'assets/images/logo/logo_app_bar.png';
+  static const String appBarYoutubeIcon = 'assets/images/logo/youtube_icon.png';
 
   // dummy data of channels that user have subscribed
   static const String dummyDataChannelBedirhanImage =
@@ -41,4 +42,5 @@ class MyImageStrings {
       'assets/images/dummy_data_channels_subscribed/onur.jpg';
   static const String dummyDataChannelSerhanImage =
       'assets/images/dummy_data_channels_subscribed/serhan.jpg';
+  static const String dummyDataChannelBtAkdenizImage = 'assets/images/1.jpg';
 }

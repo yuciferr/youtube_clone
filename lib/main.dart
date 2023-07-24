@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: MyColors.blackMain,
         appBarTheme: const AppBarTheme(
           backgroundColor: MyColors.blackMain,
-          elevation: 0,
+          elevation: 2,
           titleTextStyle: TextStyle(
             color: MyColors.white,
             fontSize: 20,

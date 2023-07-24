@@ -27,7 +27,7 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
                 buildChannelsSubscribed(
                     MyImageStrings.dummyDataChannelSerhanImage),
                 buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelOnurImage),
+                    MyImageStrings.dummyDataChannelBtAkdenizImage),
                 buildChannelsSubscribed(
                     MyImageStrings.dummyDataChannelYusufImage),
                 buildChannelsSubscribed(
