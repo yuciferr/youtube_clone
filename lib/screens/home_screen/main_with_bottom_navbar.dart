@@ -26,7 +26,9 @@ class _BottomNavState extends State<BottomNav> {
       'Index 2: Add',
       style: optionStyle,
     ),
+
     SubscriptionsScreen(),
+
     Text(
       'Index 4: Library',
       style: optionStyle,
