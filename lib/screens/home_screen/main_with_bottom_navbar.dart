@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
+import 'package:youtube_clone/screens/home_screen/shorts_screen.dart';
 import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
 import 'home_screen.dart';
@@ -18,10 +19,7 @@ class _BottomNavState extends State<BottomNav> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
-    const Text(
-      'Index 1: Shorts',
-      style: optionStyle,
-    ),
+    const ShortsScreen(),
     Container(),
     const SubscriptionsScreen(),
     const Text(
