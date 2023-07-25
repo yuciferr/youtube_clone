@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
 import 'package:youtube_clone/screens/home_screen/shorts_screen.dart';
+import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 import 'package:youtube_clone/screens/personal_page/personal_page_home.dart';
 
 import 'home_screen.dart';
@@ -21,7 +22,7 @@ class _BottomNavState extends State<BottomNav> {
     const HomeScreen(),
     const ShortsScreen(),
     Container(),
-    const PersonalPageHome(),
+    const SubscriptionsScreen(),
     const Text(
       'Index 4: Library',
       style: optionStyle,
