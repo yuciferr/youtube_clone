@@ -4,6 +4,7 @@ import 'package:youtube_clone/constants/image_strings.dart';
 import 'package:youtube_clone/constants/text_strings.dart';
 import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
+import '../../commons/build_card_pages_scrollable_channels.dart';
 import '../../commons/build_channel_single_post.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,16 +42,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  buildCardPagesForHome('All'),
-                  buildCardPagesForHome('Mixes'),
-                  buildCardPagesForHome('Music'),
-                  buildCardPagesForHome('Live'),
-                  buildCardPagesForHome('Game'),
-                  buildCardPagesForHome('Volleyball'),
-                  buildCardPagesForHome('Soccer'),
-                  buildCardPagesForHome('Rp'),
-                  buildCardPagesForHome('Last uploads'),
-                  buildCardPagesForHome('Suggest a feedback'),
+                  const BuildCardPagesScrollableChannels(title: 'All'),
+                  const BuildCardPagesScrollableChannels(title: 'Mixes'),
+                  const BuildCardPagesScrollableChannels(title: 'Music'),
+                  const BuildCardPagesScrollableChannels(title: 'Live'),
+                  const BuildCardPagesScrollableChannels(title: 'Game'),
+                  const BuildCardPagesScrollableChannels(title: 'Volleyball'),
+                  const BuildCardPagesScrollableChannels(title: 'Soccer'),
+                  const BuildCardPagesScrollableChannels(title: 'Rp'),
+                  const BuildCardPagesScrollableChannels(title: 'Last uploads'),
+                  const BuildCardPagesScrollableChannels(
+                      title: 'Suggest a feedback'),
                 ],
               ),
             ),
@@ -90,24 +92,6 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Card buildCardPagesForHome(String title) {
-    return Card(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
-      ),
-      color: MyColors.greyVideo,
-      child: TextButton(
-        onPressed: () {},
-        child: Text(
-          title,
-          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

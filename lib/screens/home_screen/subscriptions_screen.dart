@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../commons/build_card_pages_scrollable_channels.dart';
+import '../../commons/build_channel_single_post.dart';
 import '../../constants/image_strings.dart';
+import '../../constants/text_strings.dart';
 
 class SubscriptionsScreen extends StatefulWidget {
   const SubscriptionsScreen({super.key});
@@ -14,35 +17,90 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: Column(
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelBedirhanImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelYusufImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelSerhanImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelBtAkdenizImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelYusufImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelBedirhanImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelOnurImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelSerhanImage),
-                buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelBedirhanImage),
-              ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelBedirhanImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelYusufImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelSerhanImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelBtAkdenizImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelYusufImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelBedirhanImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelOnurImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelSerhanImage),
+                  buildChannelsSubscribed(
+                      MyImageStrings.dummyDataChannelBedirhanImage),
+                ],
+              ),
             ),
-          ),
-          // aboneliklerin paylaştıkları gönderiler gelecek
-        ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: const [
+                  BuildCardPagesScrollableChannels(title: 'All'),
+                  BuildCardPagesScrollableChannels(title: 'Mixes'),
+                  BuildCardPagesScrollableChannels(title: 'Music'),
+                  BuildCardPagesScrollableChannels(title: 'Live'),
+                  BuildCardPagesScrollableChannels(title: 'Game'),
+                  BuildCardPagesScrollableChannels(title: 'Volleyball'),
+                  BuildCardPagesScrollableChannels(title: 'Soccer'),
+                  BuildCardPagesScrollableChannels(title: 'Rp'),
+                  BuildCardPagesScrollableChannels(title: 'Last uploads'),
+                  BuildCardPagesScrollableChannels(title: 'Suggest a feedback'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: const [
+                  BuildChannelSinglePost(
+                    postImage: MyImageStrings.dummyDataChannelYusufImage,
+                    channelImage: MyImageStrings.dummyDataChannelYusufImage,
+                    postDescription: MyStrings.postStringsYusufJobPostTitle,
+                    channelDescription:
+                        MyStrings.postStringsYusufJobPostDescription,
+                  ),
+                  BuildChannelSinglePost(
+                    postImage: MyImageStrings.dummyDataChannelSerhanImage,
+                    channelImage: MyImageStrings.dummyDataChannelSerhanImage,
+                    postDescription: MyStrings.postStringsSerhanDiaryPostTitle,
+                    channelDescription:
+                        MyStrings.postStringsSerhanDiaryPostDescription,
+                  ),
+                  BuildChannelSinglePost(
+                    postImage: MyImageStrings.dummyDataChannelOnurImage,
+                    channelImage: MyImageStrings.dummyDataChannelOnurImage,
+                    postDescription: MyStrings.postStringsOnurFrogPostTitle,
+                    channelDescription:
+                        MyStrings.postStringsOnurFrogPostDescription,
+                  ),
+                  BuildChannelSinglePost(
+                    postImage: MyImageStrings.dummyDataChannelBedirhanImage,
+                    channelImage: MyImageStrings.dummyDataChannelBedirhanImage,
+                    postDescription: MyStrings.postStringsBedirhanPostTitle,
+                    channelDescription:
+                        MyStrings.postStringsBedirhanPostDescription,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
