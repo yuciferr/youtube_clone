@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/personal_page/channel_videos_page.dart';
 
 class PersonalPageHome extends StatefulWidget {
   const PersonalPageHome({super.key});
@@ -89,9 +90,7 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
                       Center(
                         child: Text('HOME'),
                       ),
-                      Center(
-                        child: Text('VIDEOS'),
-                      ),
+                      ChannelVideosPage(),
                       Center(
                         child: Text('SHORTS'),
                       ),
