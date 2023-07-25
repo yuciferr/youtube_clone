@@ -4,6 +4,7 @@ import '../../commons/build_card_pages_scrollable_channels.dart';
 import '../../commons/build_channel_single_post.dart';
 import '../../constants/image_strings.dart';
 import '../../constants/text_strings.dart';
+import '../personal_page/personal_page_home.dart';
 
 class SubscriptionsScreen extends StatefulWidget {
   const SubscriptionsScreen({super.key});
@@ -108,9 +109,23 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
   Padding buildChannelsSubscribed(String channelName) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: CircleAvatar(
-        radius: 30,
-        backgroundImage: AssetImage(channelName),
+      child: IconButton(
+        onPressed: () {
+          setState(
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PersonalPageHome(),
+                ),
+              );
+            },
+          );
+        },
+        icon: CircleAvatar(
+          radius: 30,
+          backgroundImage: AssetImage(channelName),
+        ),
       ),
     );
   }
