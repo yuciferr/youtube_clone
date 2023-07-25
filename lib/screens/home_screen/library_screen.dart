@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/account_page/account_page.dart';
 import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
 import '../../constants/colors.dart';
@@ -291,7 +292,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
         ),
         TextButton(
           onPressed: () {
-            // User Profile gidecek
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AccountPage()));
           },
           child: Image.asset(
             MyImageStrings.appBarUserProfileImage,
