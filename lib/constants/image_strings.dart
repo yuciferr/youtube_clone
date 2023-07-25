@@ -31,6 +31,7 @@ class MyImageStrings {
   static const String appBarUserProfileImage =
       'assets/icons/appbar_icons/user.png';
   static const String appBarYoutubeLogo = 'assets/images/logo/logo_app_bar.png';
+  static const String appBarYoutubeIcon = 'assets/images/logo/youtube_icon.png';
 
   // dummy data of channels that user have subscribed
   static const String dummyDataChannelBedirhanImage =
@@ -41,4 +42,34 @@ class MyImageStrings {
       'assets/images/dummy_data_channels_subscribed/onur.jpg';
   static const String dummyDataChannelSerhanImage =
       'assets/images/dummy_data_channels_subscribed/serhan.jpg';
+  static const String dummyDataChannelBtAkdenizImage = 'assets/images/1.jpg';
+
+  // bottom model sheet
+  static const String bottomSheetCreateAPost =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_create_a_post.png';
+  static const String bottomSheetCreateAShorts =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_create_a_short.png';
+  static const String bottomSheetGoLive =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_go_live.png';
+  static const String bottomSheetUploadAVideo =
+      'assets/icons/bottom_model_sheet_icons/bottom_sheet_upload_a_video.png';
+
+  // shorts icons
+  static const String shortsCamera =
+      'assets/icons/shorts_icons/shorts_camera.png';
+  static const String shortsComment =
+      'assets/icons/shorts_icons/shorts_comment.png';
+  static const String shortsDetail =
+      'assets/icons/shorts_icons/shorts_detail.png';
+  static const String shortsDislike =
+      'assets/icons/shorts_icons/shorts_dislike.png';
+  static const String shortsLike = 'assets/icons/shorts_icons/shorts_like.png';
+  static const String shortsShare =
+      'assets/icons/shorts_icons/shorts_share.png';
+  static const String shortsSoundtrack =
+      'assets/icons/shorts_icons/shorts_soundtrack.png';
+  static const String shortsSubscribe =
+      'assets/icons/shorts_icons/shorts_subscribe.png';
+  static const String shortsSearch =
+      'assets/icons/shorts_icons/shorts_search.png';
 }

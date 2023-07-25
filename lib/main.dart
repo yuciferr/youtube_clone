@@ -45,12 +45,12 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.blue,
         backgroundColor: MyColors.blackMain,
         scaffoldBackgroundColor: MyColors.blackMain,
         appBarTheme: const AppBarTheme(
           backgroundColor: MyColors.blackMain,
-          elevation: 0,
+          elevation: 2,
           titleTextStyle: TextStyle(
             color: MyColors.white,
             fontSize: 20,

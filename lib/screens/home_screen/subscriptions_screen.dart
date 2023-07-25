@@ -27,7 +27,7 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
                 buildChannelsSubscribed(
                     MyImageStrings.dummyDataChannelSerhanImage),
                 buildChannelsSubscribed(
-                    MyImageStrings.dummyDataChannelOnurImage),
+                    MyImageStrings.dummyDataChannelBtAkdenizImage),
                 buildChannelsSubscribed(
                     MyImageStrings.dummyDataChannelYusufImage),
                 buildChannelsSubscribed(
@@ -59,14 +59,11 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
 
   AppBar buildAppBar() {
     return AppBar(
-      // backgroundColor: MyColors.blackMain,
-      leading: IconButton(
-        onPressed: () {},
-        icon: const ImageIcon(
-          AssetImage(MyImageStrings.appBarYoutubeLogo),
-          size: 250.0,
-          color: Colors.red,
-        ),
+      leading: TextButton(
+        onPressed: () {
+          // veri çekme isteği atılacak
+        },
+        child: Image.asset(MyImageStrings.appBarYoutubeLogo),
       ),
       title: const Text(
         'Youtube',
@@ -82,7 +79,14 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SubscriptionsScreen(),
+              ),
+            );
+          },
           icon: const ImageIcon(
             AssetImage(MyImageStrings.appBarNotification),
             size: 250.0,
@@ -97,14 +101,16 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
             color: Colors.white,
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const ImageIcon(
-            AssetImage(MyImageStrings.appBarUserProfileImage),
-            size: 250.0,
-            color: Colors.white,
+        TextButton(
+          onPressed: () {
+            // User Profile gidecek
+          },
+          child: Image.asset(
+            MyImageStrings.appBarUserProfileImage,
+            height: 33,
+            width: 33,
           ),
-        )
+        ),
       ],
     );
   }
