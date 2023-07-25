@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/personal_page/channel_playlists_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_videos_page.dart';
 
 class PersonalPageHome extends StatefulWidget {
@@ -97,9 +98,7 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
                       Center(
                         child: Text('LIVE'),
                       ),
-                      Center(
-                        child: Text('PLAYLISTS'),
-                      ),
+                      ChannelPlaylistsPage(),
                       Center(
                         child: Text('COMMUNITY'),
                       ),
