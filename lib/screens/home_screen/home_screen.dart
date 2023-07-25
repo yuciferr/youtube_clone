@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
 import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
@@ -14,7 +15,43 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: const Scaffold(),
+      body: Column(
+        children: [
+          SingleChildScrollView(
+            child: Row(
+              children: [
+                Card(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  color: MyColors.greyVideo,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.explore,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Card(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  color: MyColors.greyVideo,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(''),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 

@@ -100,7 +100,7 @@ class _BottomNavState extends State<BottomNav> {
         radius: 25,
         backgroundColor: MyColors.greyVideo,
         child: CircleAvatar(
-          backgroundColor: MyColors.greyButton,
+          backgroundColor: Colors.transparent,
           radius: 14, // Orijinal fotoğraf çapı
           backgroundImage: AssetImage(imageString),
         ),
