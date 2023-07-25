@@ -39,29 +39,77 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Expanded(
-              flex: 3,
+              flex: 4,
               child: PersonalCardProfile(),
             ),
-            //const ScrollViewPersonal(),
             Expanded(
-              flex: 6,
+              flex: 7,
+              //create tab bar
               child: DefaultTabController(
-                length: 3,
+                length: 8,
                 child: Scaffold(
                   appBar: AppBar(
+                    elevation: 0,
+                    toolbarHeight: 1,
                     bottom: const TabBar(
+                      isScrollable: true,
+                      indicatorColor: Colors.red,
+                      indicatorWeight: 3,
                       tabs: [
-                        Tab(text: 'HOME'),
-                        Tab(text: 'VIDEOS'),
-                        Tab(text: 'PLAYLISTS'),
+                        Tab(
+                          text: 'HOME',
+                        ),
+                        Tab(
+                          text: 'VIDEOS',
+                        ),
+                        Tab(
+                          text: 'SHORTS',
+                        ),
+                        Tab(
+                          text: 'LIVE',
+                        ),
+                        Tab(
+                          text: 'PLAYLISTS',
+                        ),
+                        Tab(
+                          text: 'COMMUNITY',
+                        ),
+                        Tab(
+                          text: 'CHANNELS',
+                        ),
+                        Tab(
+                          text: 'ABOUT',
+                        ),
                       ],
                     ),
                   ),
                   body: const TabBarView(
                     children: [
-                      Icon(Icons.close),
-                      Icon(Icons.directions_transit),
-                      Icon(Icons.directions_bike),
+                      //TODO : Do the navigation of the tabs here.
+                      Center(
+                        child: Text('HOME'),
+                      ),
+                      Center(
+                        child: Text('VIDEOS'),
+                      ),
+                      Center(
+                        child: Text('SHORTS'),
+                      ),
+                      Center(
+                        child: Text('LIVE'),
+                      ),
+                      Center(
+                        child: Text('PLAYLISTS'),
+                      ),
+                      Center(
+                        child: Text('COMMUNITY'),
+                      ),
+                      Center(
+                        child: Text('CHANNELS'),
+                      ),
+                      Center(
+                        child: Text('ABOUT'),
+                      ),
                     ],
                   ),
                 ),
@@ -69,100 +117,6 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class ScrollViewPersonal extends StatefulWidget {
-  const ScrollViewPersonal({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<ScrollViewPersonal> createState() => _ScrollViewPersonalState();
-}
-
-class _ScrollViewPersonalState extends State<ScrollViewPersonal> {
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          //Add Home, Videos, Playlists, Channels, About widgets here.
-          Container(
-            decoration: const BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.red,
-                  width: 3,
-                ),
-              ),
-            ),
-            child: TextButton(
-              onPressed: () {
-                setState(() {});
-              },
-              child: const Text(
-                'HOME',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              setState(() {});
-            },
-            child: const Text(
-              'VIDEOS',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'SHORTS',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'LIVE',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'PLAYLISTS',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'COMMUNITY',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'CHANNELS',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text(
-              'ABOUT',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ],
       ),
     );
   }
