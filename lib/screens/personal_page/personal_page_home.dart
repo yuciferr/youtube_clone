@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/screens/personal_page/channel_about_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_channels_page.dart';
+import 'package:youtube_clone/screens/personal_page/channel_community_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_live_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_playlists_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_shorts_page.dart';
@@ -99,9 +100,7 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
                       ChannelShortsPage(),
                       ChannelLivePage(),
                       ChannelPlaylistsPage(),
-                      Center(
-                        child: Text('COMMUNITY'),
-                      ),
+                      ChannelCommunityPage(),
                       ChannelChannelsPage(),
                       ChannelAboutPage(),
                     ],
