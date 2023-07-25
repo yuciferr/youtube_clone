@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
+import 'package:youtube_clone/screens/search_page/search_page.dart';
 
 class PlaylistPage extends StatefulWidget {
   const PlaylistPage({super.key});
@@ -27,7 +28,15 @@ class _PlaylistPageState extends State<PlaylistPage> {
             ),
             IconButton(
               icon: const Icon(Icons.search),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SearchPage(),
+                  ),
+                );
+
+              },
             ),
             IconButton(
               icon: const Icon(Icons.more_vert),

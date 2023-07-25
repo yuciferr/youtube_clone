@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/personal_page/channel_about_page.dart';
+import 'package:youtube_clone/screens/personal_page/channel_channels_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_live_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_playlists_page.dart';
+import 'package:youtube_clone/screens/personal_page/channel_shorts_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_videos_page.dart';
 
 import 'channel_home_page.dart';
@@ -93,20 +96,14 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
                       //TODO : Do the navigation of the tabs here.
                       ChannelHomePage(),
                       ChannelVideosPage(),
-                      Center(
-                        child: Text('SHORTS'),
-                      ),
+                      ChannelShortsPage(),
                       ChannelLivePage(),
                       ChannelPlaylistsPage(),
                       Center(
                         child: Text('COMMUNITY'),
                       ),
-                      Center(
-                        child: Text('CHANNELS'),
-                      ),
-                      Center(
-                        child: Text('ABOUT'),
-                      ),
+                      ChannelChannelsPage(),
+                      ChannelAboutPage(),
                     ],
                   ),
                 ),
