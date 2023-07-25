@@ -60,18 +60,18 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
-    - assets/images/logo/
-    - assets/images/dummy_data_channels_subscribed/
-    - assets/icons/
-    - assets/icons/navbar_icons/active/
-    - assets/icons/navbar_icons/inactive/
-    - assets/icons/appbar_icons/
-    - assets/icons/bottom_model_sheet_icons/
-    - assets/icons/shorts_icons/
 
-  # To add assets to your application, add an assets section, like this:
-
+   - assets/images/video_player_page_images/
+   - assets/videos/
+   - assets/images/
+   - assets/images/logo/
+   - assets/images/dummy_data_channels_subscribed/
+   - assets/icons/
+   - assets/icons/navbar_icons/active/
+   - assets/icons/navbar_icons/inactive/
+   - assets/icons/appbar_icons/
+   - assets/icons/bottom_model_sheet_icons/
+   - assets/icons/shorts_icons/
 
 
 
