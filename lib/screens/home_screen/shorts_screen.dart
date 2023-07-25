@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/image_strings.dart';
+import '../search_page/search_page.dart';
 
 class ShortsScreen extends StatefulWidget {
   const ShortsScreen({super.key});
@@ -16,7 +17,10 @@ class _ShortsScreenState extends State<ShortsScreen> {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const SearchPage()));
+            },
             icon: const ImageIcon(
               AssetImage(MyImageStrings.shortsSearch),
               size: 250.0,

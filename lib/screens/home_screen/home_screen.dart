@@ -6,6 +6,7 @@ import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
 import '../../commons/build_card_pages_scrollable_channels.dart';
 import '../../commons/build_channel_single_post.dart';
+import '../search_page/search_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -134,7 +135,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SearchPage()));
+          },
           icon: const ImageIcon(
             AssetImage(MyImageStrings.appBarSearch),
             size: 250.0,
