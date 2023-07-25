@@ -63,6 +63,7 @@ flutter:
   assets:
    - assets/images/video_player_page_images/
    - assets/videos/
+   - assets/images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

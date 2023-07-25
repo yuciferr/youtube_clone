@@ -11,7 +11,7 @@ class VideoPlayerPage extends StatelessWidget {
             Container(
               color: Colors.white, // Üst kısmın arka plan rengi beyaz
               child: Image.asset(
-                'assets/images/fro.png',
+                'assets/images/video_player_page_images/fro.png',
                 fit: BoxFit.cover, // Resmi tamamen kaplayacak şekilde düzenledik
               ),
             ),
@@ -35,7 +35,7 @@ class VideoPlayerPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/pp.jpeg'),
+                          backgroundImage: AssetImage('assets/images/video_player_page_images/pp.jpeg'),
                           radius: 20,
                         ),
                         SizedBox(width: 10),
@@ -163,7 +163,7 @@ class VideoPlayerPage extends StatelessWidget {
                           width: 400,
                           height: 200,
                           child: Image.asset(
-                           'assets/images/menu_3.jpg',
+                           'assets/images/video_player_page_images/menu_3.jpg',
                         // Resmi tamamen kaplayacak şekilde düzenledik
                           ),
                         ),
@@ -195,7 +195,7 @@ class VideoPlayerPage extends StatelessWidget {
                         },
                         child: CircleAvatar(
                             backgroundImage: AssetImage(
-                                 'assets/images/ava1.png',
+                                 'assets/images/video_player_page_images/ava1.png',
                                 ),
                             radius: 26),
                       ),
@@ -246,7 +246,7 @@ class VideoPlayerPage extends StatelessWidget {
                           width: 400,
                           height: 200,
                           child: Image.asset(
-                           'assets/images/menu_5.jpg',
+                           'assets/images/video_player_page_images/menu_5.jpg',
                         // Resmi tamamen kaplayacak şekilde düzenledik
                           ),
                         ),
@@ -278,7 +278,7 @@ class VideoPlayerPage extends StatelessWidget {
                         },//***************************************** */
                         child: CircleAvatar(
                             backgroundImage: AssetImage(
-                                 'assets/images/ava2.png',
+                                 'assets/images/video_player_page_images/ava2.png',
                                 ),
                             radius: 26),
                       ),
@@ -328,7 +328,7 @@ class VideoPlayerPage extends StatelessWidget {
                           width: 400,
                           height: 200,
                           child: Image.asset(
-                           'assets/images/web.jpg',
+                           'assets/images/video_player_page_images/web.jpg',
                         // Resmi tamamen kaplayacak şekilde düzenledik
                           ),
                         ),
@@ -360,7 +360,7 @@ class VideoPlayerPage extends StatelessWidget {
                         },
                         child: CircleAvatar(
                             backgroundImage: AssetImage(
-                                 'assets/images/ava3.png',
+                                 'assets/images/video_player_page_images/ava3.png',
                                 ),
                             radius: 26),
                       ),
