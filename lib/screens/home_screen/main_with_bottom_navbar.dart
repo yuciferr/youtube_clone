@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
+import 'package:youtube_clone/screens/home_screen/library_screen.dart';
 import 'package:youtube_clone/screens/home_screen/shorts_screen.dart';
 import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
-import 'package:youtube_clone/screens/personal_page/personal_page_home.dart';
 
 import 'home_screen.dart';
 
@@ -16,17 +16,12 @@ class BottomNav extends StatefulWidget {
 
 class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const ShortsScreen(),
     Container(),
     const SubscriptionsScreen(),
-    const Text(
-      'Index 4: Library',
-      style: optionStyle,
-    ),
+    const LibraryScreen(),
   ];
 
   void _onItemTapped(int index) {
