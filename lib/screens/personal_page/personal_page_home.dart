@@ -3,6 +3,8 @@ import 'package:youtube_clone/screens/personal_page/channel_live_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_playlists_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_videos_page.dart';
 
+import 'channel_home_page.dart';
+
 class PersonalPageHome extends StatefulWidget {
   const PersonalPageHome({super.key});
 
@@ -89,9 +91,7 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
                   body: const TabBarView(
                     children: [
                       //TODO : Do the navigation of the tabs here.
-                      Center(
-                        child: Text('HOME'),
-                      ),
+                      ChannelHomePage(),
                       ChannelVideosPage(),
                       Center(
                         child: Text('SHORTS'),
