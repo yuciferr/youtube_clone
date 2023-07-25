@@ -15,7 +15,7 @@ class _ChannelVideosPageState extends State<ChannelVideosPage> {
       body: Padding(
         padding: const EdgeInsets.all(14.0),
         child: ListView(
-          children: [
+          children: const [
             MyVideosCardChannel(
               'Video Title 1',
               '1.2M views',
