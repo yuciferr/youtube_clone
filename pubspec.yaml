@@ -59,11 +59,25 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
+<<<<<<< HEAD
    - assets/images/video_player_page_images/
    - assets/videos/
    - assets/images/
+=======
+    - assets/images/
+    - assets/images/logo/
+    - assets/images/dummy_data_channels_subscribed/
+    - assets/icons/
+    - assets/icons/navbar_icons/active/
+    - assets/icons/navbar_icons/inactive/
+    - assets/icons/appbar_icons/
+    - assets/icons/bottom_model_sheet_icons/
+    - assets/icons/shorts_icons/
+
+  # To add assets to your application, add an assets section, like this:
+
+>>>>>>> 182a05181c56bf045252561ac84adc8bae5896e5
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -73,7 +87,7 @@ flutter:
   # https://flutter.dev/assets-and-images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
+  # in this "flutter" section. Each entry in this list should have as
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
