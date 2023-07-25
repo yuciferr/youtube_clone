@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
+import 'package:youtube_clone/screens/video_list_page/video_list_page.dart';
 
 class BuildChannelSinglePost extends StatelessWidget {
   const BuildChannelSinglePost(
@@ -22,7 +23,9 @@ class BuildChannelSinglePost extends StatelessWidget {
           Stack(
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VideoPlayerPage()));
+                },
                 child: SizedBox(
                   width: 300,
                   height: 200,
