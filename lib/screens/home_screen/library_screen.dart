@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/account_page/account_page.dart';
 import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/image_strings.dart';
+import '../playlists_page/playlists_page.dart';
+import '../search_page/search_page.dart';
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({super.key});
@@ -87,7 +90,13 @@ class _LibraryScreenState extends State<LibraryScreen> {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const PlaylistPage()));
+                          },
                           child: const Text(
                             'View all',
                             style:
@@ -271,7 +280,10 @@ class _LibraryScreenState extends State<LibraryScreen> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SearchPage()));
+          },
           icon: const ImageIcon(
             AssetImage(MyImageStrings.appBarSearch),
             size: 250.0,
@@ -280,7 +292,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
         ),
         TextButton(
           onPressed: () {
-            // User Profile gidecek
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const AccountPage()));
           },
           child: Image.asset(
             MyImageStrings.appBarUserProfileImage,

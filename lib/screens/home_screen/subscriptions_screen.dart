@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/all_subscriptions_page/all_subscriptions_page.dart';
 
 import '../../commons/build_card_pages_scrollable_channels.dart';
 import '../../commons/build_channel_single_post.dart';
 import '../../constants/image_strings.dart';
 import '../../constants/text_strings.dart';
 import '../personal_page/personal_page_home.dart';
+import '../search_page/search_page.dart';
 
 class SubscriptionsScreen extends StatefulWidget {
   const SubscriptionsScreen({super.key});
@@ -27,23 +29,37 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
               child: Row(
                 children: [
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelBedirhanImage),
+                      MyImageStrings.dummyDataChannelBedirhanImage,
+                      'bedirhantng'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelYusufImage),
+                      MyImageStrings.dummyDataChannelYusufImage, 'yuciffer'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelSerhanImage),
+                      MyImageStrings.dummyDataChannelSerhanImage, 'serhanbymz'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelBtAkdenizImage),
+                      MyImageStrings.dummyDataChannelBtAkdenizImage,
+                      'btkakdeniz'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelYusufImage),
+                      MyImageStrings.dummyDataChannelYusufImage, 'yuciffer'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelBedirhanImage),
+                      MyImageStrings.dummyDataChannelBedirhanImage,
+                      'bedirhantng'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelOnurImage),
+                      MyImageStrings.dummyDataChannelOnurImage, '10urcetin'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelSerhanImage),
+                      MyImageStrings.dummyDataChannelSerhanImage, 'serhanbymz'),
                   buildChannelsSubscribed(
-                      MyImageStrings.dummyDataChannelBedirhanImage),
+                      MyImageStrings.dummyDataChannelBedirhanImage,
+                      'bedirhantng'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const AllSubscriptionsPage()));
+                    },
+                    child: const Text('All'),
+                  )
                 ],
               ),
             ),
@@ -106,10 +122,10 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
     );
   }
 
-  Padding buildChannelsSubscribed(String channelName) {
+  Padding buildChannelsSubscribed(String channelName, String channel) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: IconButton(
+      child: TextButton(
         onPressed: () {
           setState(
             () {
@@ -122,9 +138,18 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
             },
           );
         },
-        icon: CircleAvatar(
-          radius: 30,
-          backgroundImage: AssetImage(channelName),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 30,
+              backgroundImage: AssetImage(channelName),
+            ),
+            Text(
+              channel,
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.normal),
+            )
+          ],
         ),
       ),
     );
@@ -167,7 +192,10 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SearchPage()));
+          },
           icon: const ImageIcon(
             AssetImage(MyImageStrings.appBarSearch),
             size: 250.0,
