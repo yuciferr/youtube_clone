@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/screens/account_page/login/login_screen.dart';
 import 'package:youtube_clone/auth.dart';
 import 'package:youtube_clone/screens/home_screen/home_screen.dart';
+import 'package:youtube_clone/screens/home_screen/main_with_bottom_navbar.dart';
 
 
 class WidgetTree extends StatefulWidget {
@@ -23,7 +24,7 @@ class _WidgetTreeState extends State<WidgetTree> {
           if (user == null) {
             return const LoginScreenOfYoutube();
           }
-          return const HomeScreen();
+          return const BottomNav();
         }
         return const Scaffold(
           body: Center(
