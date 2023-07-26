@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:youtube_clone/auth.dart';
+
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -9,6 +12,15 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  bool isLogin = true;
+
+  Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {
+      print(e);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,7 +136,9 @@ class _AccountPageState extends State<AccountPage> {
                   alignment: Alignment.topLeft,
                   // color: Colors.white,
                   child: TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      signOut();
+                    },
                     icon: const Icon(
                       Icons.logout,
                       color: Colors.white,
