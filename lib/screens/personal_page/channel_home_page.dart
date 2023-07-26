@@ -23,32 +23,36 @@ class _ChannelHomePageState extends State<ChannelHomePage> {
               child: ListView(
                 children: const [
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelYusufImage,
-                    channelImage: MyImageStrings.dummyDataChannelYusufImage,
-                    postDescription: MyStrings.postStringsYusufJobPostTitle,
+                    postImage:
+                        'https://pyxis.nymag.com/v1/imgs/96b/b93/49701e4ec64fa9663773802cc2b7b78c49-12-los-pollos-hermanos.2x.h473.w710.jpg',
+                    channelImage: MyImageStrings.dummyDataChannelBedirhanImage,
+                    postDescription: MyStrings.postStringsBedirhanPostTitle,
                     channelDescription:
-                        MyStrings.postStringsYusufJobPostDescription,
+                        MyStrings.postStringsBedirhanPostDescription,
                   ),
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelSerhanImage,
-                    channelImage: MyImageStrings.dummyDataChannelSerhanImage,
-                    postDescription: MyStrings.postStringsSerhanDiaryPostTitle,
-                    channelDescription:
-                        MyStrings.postStringsSerhanDiaryPostDescription,
-                  ),
-                  BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelOnurImage,
+                    postImage:
+                        'https://images.pond5.com/frogs-water-lily-jumping-footage-000510561_iconl.jpeg',
                     channelImage: MyImageStrings.dummyDataChannelOnurImage,
                     postDescription: MyStrings.postStringsOnurFrogPostTitle,
                     channelDescription:
                         MyStrings.postStringsOnurFrogPostDescription,
                   ),
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelBedirhanImage,
-                    channelImage: MyImageStrings.dummyDataChannelBedirhanImage,
-                    postDescription: MyStrings.postStringsBedirhanPostTitle,
+                    postImage:
+                        'https://i.ytimg.com/vi/enPA2i35diI/maxresdefault.jpg',
+                    channelImage: MyImageStrings.dummyDataChannelYusufImage,
+                    postDescription: MyStrings.postStringsYusufJobPostTitle,
                     channelDescription:
-                        MyStrings.postStringsBedirhanPostDescription,
+                        MyStrings.postStringsYusufJobPostDescription,
+                  ),
+                  BuildChannelSinglePost(
+                    postImage:
+                        'https://emerging-europe.com/wp-content/uploads/2019/07/bigstock-krakow-poland-august-k-257572672-990x556.jpg',
+                    channelImage: MyImageStrings.dummyDataChannelSerhanImage,
+                    postDescription: MyStrings.postStringsSerhanDiaryPostTitle,
+                    channelDescription:
+                        MyStrings.postStringsSerhanDiaryPostDescription,
                   ),
                 ],
               ),
