@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
+import 'package:youtube_clone/screens/account_page/login/login_screen.dart';
 import 'package:youtube_clone/screens/home_screen/main_with_bottom_navbar.dart';
 
 void main() {
@@ -102,8 +102,8 @@ class MyApp extends StatelessWidget {
         ),
         accentColor: MyColors.blueTextButton,
         buttonTheme: const ButtonThemeData(
-          buttonColor: MyColors.redButton,
-          textTheme: ButtonTextTheme.primary,
+          // buttonColor: MyColors.redButton,
+          // textTheme: ButtonTextTheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(4),
@@ -111,8 +111,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const BottomNav(),
+      home: const LoginScreenOfYoutube(),
     );
   }
 }
-
