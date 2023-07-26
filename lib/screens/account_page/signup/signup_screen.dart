@@ -3,6 +3,8 @@ import 'package:youtube_clone/screens/account_page/signup/signup_form_widget.dar
 
 import '../login/login_screen.dart';
 import 'form_header_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:youtube_clone/auth.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});

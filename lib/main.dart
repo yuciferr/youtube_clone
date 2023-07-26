@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/screens/account_page/login/login_screen.dart';
 import 'package:youtube_clone/screens/home_screen/main_with_bottom_navbar.dart';
+import 'package:youtube_clone/widget_tree.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -111,7 +115,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const LoginScreenOfYoutube(),
+      home: const WidgetTree(),
     );
   }
 }

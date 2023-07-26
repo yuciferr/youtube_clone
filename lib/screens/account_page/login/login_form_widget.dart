@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/screens/home_screen/home_screen.dart';
 
 import '../forgot_password/forgot_password_model_bottom_sheet.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:youtube_clone/auth.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -12,6 +14,40 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   bool _isPasswordVisible = false;
+  bool isLogin = false;
+
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> signInWithEmailAndPassword() async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+    } on FirebaseAuthException catch (e) {
+      // if (e.code == 'user-not-found') {
+      //   print('No user found for that email.');
+      // } else if (e.code == 'wrong-password') {
+      //   print('Wrong password provided for that user.');
+      // }
+      print(e);
+    }
+  }
+
+  Future<void> createUserWithEmailAndPassword() async {
+    try {
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+    } on FirebaseAuthException catch (e) {
+      // if (e.code == 'weak-password') {
+      //   print('The password provided is too weak.');
+      // } else if (e.code == 'email-already-in-use') {
+      //   print('The account already exists for that email.');
+      // }
+      print(e);
+    } catch (e) {
+      print(e);
+    }
+  }
 
   Widget _buildSuffixIcon() {
     return IconButton(
@@ -35,6 +71,7 @@ class _LoginFormState extends State<LoginForm> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              controller: _emailController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.person_outline_outlined),
                 labelText: "E-mail",
@@ -46,6 +83,7 @@ class _LoginFormState extends State<LoginForm> {
               height: 20,
             ),
             TextFormField(
+              controller: _passwordController,
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.fingerprint),
@@ -71,13 +109,11 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  isLogin ? signInWithEmailAndPassword() : createUserWithEmailAndPassword();
                   // Navigator.popUntil(context, (route) => ); Main screen e kadar
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ),
-                  );
+                  setState(() {
+                    isLogin = !isLogin;
+                  });
                 },
                 child: Text(
                   'Login'.toUpperCase(),
