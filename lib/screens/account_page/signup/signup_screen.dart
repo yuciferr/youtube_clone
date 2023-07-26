@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/screens/account_page/signup/signup_form_widget.dart';
 
 import '../login/login_screen.dart';
@@ -18,7 +19,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: MyColors.blackMain,
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 30.0),

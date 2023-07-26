@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_clone/screens/home_screen/home_screen.dart';
 
 import '../../home_screen/main_with_bottom_navbar.dart';
 import '../forgot_password/forgot_password_model_bottom_sheet.dart';
@@ -99,6 +98,8 @@ class _LoginFormState extends State<LoginForm> {
               controller: _passwordController,
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
+                labelStyle: const TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(color: Colors.white),
                 focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.white),
                 ),
@@ -107,8 +108,6 @@ class _LoginFormState extends State<LoginForm> {
                 hintText: "Password",
                 border: const OutlineInputBorder(),
                 suffixIcon: _buildSuffixIcon(),
-                labelStyle: const TextStyle(color: Colors.white),
-                hintStyle: const TextStyle(color: Colors.white),
               ),
             ),
             const SizedBox(
