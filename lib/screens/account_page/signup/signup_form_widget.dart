@@ -15,7 +15,10 @@ class SignUpFormWidget extends StatelessWidget {
           children: [
             TextFormField(
               decoration: const InputDecoration(
-                label: Text("Full Name"),
+                label: Text(
+                  "Full Name",
+                  style: TextStyle(color: Colors.white),
+                ),
                 hintText: "Your Full Name",
                 prefixIcon: Icon(Icons.person_outline_rounded),
               ),
@@ -25,7 +28,10 @@ class SignUpFormWidget extends StatelessWidget {
             ),
             TextFormField(
               decoration: const InputDecoration(
-                label: Text("E-mail"),
+                label: Text(
+                  "E-mail",
+                  style: TextStyle(color: Colors.white),
+                ),
                 hintText: "E-mail",
                 prefixIcon: Icon(Icons.email_outlined),
               ),
