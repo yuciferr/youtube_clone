@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/image_strings.dart';
 import '../search_page/search_page.dart';
 
 class ShortsScreen extends StatefulWidget {
@@ -21,25 +20,22 @@ class _ShortsScreenState extends State<ShortsScreen> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const SearchPage()));
             },
-            icon: const ImageIcon(
-              AssetImage(MyImageStrings.shortsSearch),
-              size: 250.0,
+            icon: const Icon(
+              Icons.search,
               color: Colors.white,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const ImageIcon(
-              AssetImage(MyImageStrings.shortsCamera),
-              size: 250.0,
+            icon: const Icon(
+              Icons.camera_alt_outlined,
               color: Colors.white,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const ImageIcon(
-              AssetImage(MyImageStrings.shortsDetail),
-              size: 250.0,
+            icon: const Icon(
+              Icons.more_vert,
               color: Colors.white,
             ),
           ),
