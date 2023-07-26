@@ -3,26 +3,40 @@ import 'package:flutter/material.dart';
 class VideoPlayerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 300.0,
-            floating: false,
-            pinned: true,
-            leading: IconButton(
-              icon: Icon(Icons.arrow_downward_sharp),
-              onPressed: () {
-                // Yapmak istediğiniz işlemleri burada belirtebilirsiniz
-              },
-            ),
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
+   
+return Scaffold(
+  body: CustomScrollView(
+    slivers: <Widget>[
+      SliverAppBar(
+        expandedHeight: 300.0,
+        floating: false,
+        pinned: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_downward_sharp),
+          onPressed: () {
+            // Yapmak istediğiniz işlemleri burada belirtebilirsiniz
+          },
+        ),
+        flexibleSpace: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.asset(
                 'assets/images/video_player_page_images/fro.png',
                 fit: BoxFit.cover,
               ),
             ),
-          ),
+            Positioned(
+              left: 0,
+              right: 40,
+              bottom: 0,
+              child: Container(
+                height: 2,
+                color: Colors.red, // Red line color
+              ),
+            ),
+          ],
+        ),
+      ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
