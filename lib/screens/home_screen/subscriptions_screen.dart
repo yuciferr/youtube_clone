@@ -86,28 +86,32 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
               child: Column(
                 children: const [
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelYusufImage,
+                    postImage:
+                        'https://i.ytimg.com/vi/enPA2i35diI/maxresdefault.jpg',
                     channelImage: MyImageStrings.dummyDataChannelYusufImage,
                     postDescription: MyStrings.postStringsYusufJobPostTitle,
                     channelDescription:
                         MyStrings.postStringsYusufJobPostDescription,
                   ),
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelSerhanImage,
+                    postImage:
+                        'https://emerging-europe.com/wp-content/uploads/2019/07/bigstock-krakow-poland-august-k-257572672-990x556.jpg',
                     channelImage: MyImageStrings.dummyDataChannelSerhanImage,
                     postDescription: MyStrings.postStringsSerhanDiaryPostTitle,
                     channelDescription:
                         MyStrings.postStringsSerhanDiaryPostDescription,
                   ),
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelOnurImage,
+                    postImage:
+                        'https://images.pond5.com/frogs-water-lily-jumping-footage-000510561_iconl.jpeg',
                     channelImage: MyImageStrings.dummyDataChannelOnurImage,
                     postDescription: MyStrings.postStringsOnurFrogPostTitle,
                     channelDescription:
                         MyStrings.postStringsOnurFrogPostDescription,
                   ),
                   BuildChannelSinglePost(
-                    postImage: MyImageStrings.dummyDataChannelBedirhanImage,
+                    postImage:
+                        'https://pyxis.nymag.com/v1/imgs/96b/b93/49701e4ec64fa9663773802cc2b7b78c49-12-los-pollos-hermanos.2x.h473.w710.jpg',
                     channelImage: MyImageStrings.dummyDataChannelBedirhanImage,
                     postDescription: MyStrings.postStringsBedirhanPostTitle,
                     channelDescription:
