@@ -22,7 +22,7 @@ class LoginHeaderWidget extends StatelessWidget {
           'Welcome Back',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
-        Text(
+        const Text(
           'Make it work, make it right, make it fast.',
           style: TextStyle(color: Colors.white),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../constants/colors.dart';
 
 import 'login_footer_widget.dart';
 import 'login_form_widget.dart';
@@ -12,7 +13,7 @@ class LoginScreenOfYoutube extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       // backgroundColor: Theme.of(context).colorScheme.background,
-      backgroundColor: Colors.black,
+      backgroundColor: MyColors.blackMain,
       body: SingleChildScrollView(
         // childini scrollable yapıyor
         child: Container(
