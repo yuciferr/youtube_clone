@@ -14,6 +14,7 @@ class SignUpFormWidget extends StatelessWidget {
         child: Column(
           children: [
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -35,6 +36,7 @@ class SignUpFormWidget extends StatelessWidget {
               height: 15,
             ),
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -56,6 +58,7 @@ class SignUpFormWidget extends StatelessWidget {
               height: 15,
             ),
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -74,6 +77,7 @@ class SignUpFormWidget extends StatelessWidget {
               height: 15,
             ),
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
