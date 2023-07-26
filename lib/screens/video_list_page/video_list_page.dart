@@ -3,155 +3,295 @@ import 'package:flutter/material.dart';
 class VideoPlayerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+   
+return Scaffold(
+  body: CustomScrollView(
+    slivers: <Widget>[
+      SliverAppBar(
+        expandedHeight: 300.0,
+        floating: false,
+        pinned: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_downward_sharp),
+          onPressed: () {
+            
+          },
+        ),
+        flexibleSpace: Stack(
           children: [
-            Container(
-              color: Colors.white, // Üst kısmın arka plan rengi beyaz
+            Positioned.fill(
               child: Image.asset(
                 'assets/images/video_player_page_images/fro.png',
-                fit: BoxFit.cover, // Resmi tamamen kaplayacak şekilde düzenledik
+                fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
+            Positioned(
+              left: 0,
+              right: 40,
+              bottom: 0,
+              child: Container(
+                height: 2,
+                color: Colors.red, // Red line color
+              ),
+            ),
+          ],
+        ),
+      ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                SizedBox(height: 16),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'Front-End Pişmalık Mı?',
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        '1.1M View\t\t6 day ago\t\t more...',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      SizedBox(height: 16),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage('assets/images/video_player_page_images/pp.jpeg'),
+                            radius: 20,
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Onur Çetin',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  '5.2M Subscriber',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                              ],
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              // Abone ol butonuna tıklandığında yapılacak işlemler
+                            },
+                            style: TextButton.styleFrom(
+                              primary: Colors.white,
+                              backgroundColor: Colors.red,
+                              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            ),
+                            child: Text(
+                              'Subscribe',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              // Bildirim ikonuna tıklandığında yapılacak işlemler
+                            },
+                            icon: Icon(
+                              Icons.notifications_off,
+                              size: 24,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              // Like butonuna basıldığında yapılacak işlemler
+                            },
+                            icon: Icon(Icons.thumb_up),
+                            color: Color(0xFFFFFFFF), // Like butonunun rengi
+                            iconSize: 20,
+                          ),
+                          Text(
+                            '89K', // Like sayısı
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              // Dislike butonuna basıldığında yapılacak işlemler
+                            },
+                            icon: Icon(Icons.thumb_down),
+                            color: Color(0xFFFFFFFF), // Dislike butonunun rengi
+                            iconSize: 20,
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              // Share butonuna basıldığında yapılacak işlemler
+                            },
+                            icon: Icon(Icons.share),
+                            color: Color(0xFFFFFFFF), // Share butonunun rengi
+                            iconSize: 20,
+                          ),
+                          Text(
+                            'Share', // Share butonunun altında metin
+                            style: TextStyle(fontSize: 17, color: Color(0xFFFFFFFF)), // Share metni rengi
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              // Download butonuna basıldığında yapılacak işlemler
+                            },
+                            icon: Icon(Icons.download),
+                            color: Color(0xFFFFFFFF), // Download butonunun rengi
+                            iconSize: 20,
+                          ),
+                          Text(
+                            'Download', // Download butonunun altında metin
+                            style: TextStyle(fontSize: 17, color: Color(0xFFFFFFFF)), // Download metni rengi
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      // Comments section as a button
+                      ElevatedButton(
+                        onPressed: () {
+                          // When the "Comments" button is pressed, show the comments in a full-screen bottom sheet
+                          showModalBottomSheet<void>(
+                            context: context,
+                            isScrollControlled: true, // To make the sheet full-screen
+                            backgroundColor: Colors.transparent, // Set the background color to transparent
+                            builder: (BuildContext context) {
+                              return SingleChildScrollView(
+                                child: Container(
+                                  height: MediaQuery.of(context).size.height,
+                                  color: Color(0xFF272727),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(16.0),                                     
+                                        child: Text(
+                                          'Comments   194',
+                                          style: TextStyle(fontSize: 22),
+                                        ),
+                                      ),
+                                    SizedBox(height: 10),
+                  // Add your other content here
+
+                  // Comments
                   Text(
-                    'Front-End Pişmalık Mı?',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    "Bedirhan : Pişmanlık değil hocam.",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          // Handle like button press
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.thumb_up, size: 18),
+                            SizedBox(width: 5),
+                            Text('Like', style: TextStyle(fontSize: 16)),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      // Add other buttons or info here
+                    ],
                   ),
                   SizedBox(height: 10),
                   Text(
-                    '1.1M View\t\t6 day ago\t\t more...',
-                    style: TextStyle(fontSize: 16),
+                    "Onur : Doğru",
+                    style: TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(height: 10),
                   Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/video_player_page_images/pp.jpeg'),
-                          radius: 20,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          // Handle like button press
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.thumb_up, size: 18),
+                            SizedBox(width: 5),
+                            Text('Like', style: TextStyle(fontSize: 16)),
+                          ],
                         ),
-                        SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Onur Çetin',
-                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                '5.2M Subscriber',
-                                style: TextStyle(fontSize: 14),
-                              ),
-                            ],
-                          ),
+                      ),
+                      SizedBox(width: 20),
+                      // Add other buttons or info here
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Serhan : Backend iyidir.",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 10),
+                  
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          // Handle like button press
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.thumb_up, size: 18),
+                            SizedBox(width: 5),
+                            Text('Like', style: TextStyle(fontSize: 16)),
+                          ],
                         ),
-                        TextButton(
-                          onPressed: () {
-                            // Abone ol butonuna tıklandığında yapılacak işlemler
-                          },
-                          child: Text(
-                            'Subscribe',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red, // Kırmızı renk
+                      ),
+
+                                    ],
+                                  ),
+                    ],
+                    ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFF333333)
+                          // Set the button color to blue
+                        ),
+                        
+                        child: Card(
+                          color: Color(0xFF272727),
+                          elevation: 4,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  'Bedirhan',
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Color(0xFFFFFFFF)),
+                                ),
+                                Text(
+                                  'Pişmanlık değil hocam',
+                                  style: TextStyle(color: Color(0xFFFFFFFF)),
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                        IconButton(
-                          onPressed: () {
-                            // Bildirim ikonuna tıklandığında yapılacak işlemler
-                          },
-                          icon: Icon(
-                            Icons.notifications_off,
-                            size: 24,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          // Like butonuna basıldığında yapılacak işlemler
-                        },
-                        icon: Icon(Icons.thumb_up),
-                        color: Color(0xFF171212), // Like butonunun rengi
-                        iconSize: 20,
                       ),
-                      Text(
-                        '89K', // Like sayısı
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          // Dislike butonuna basıldığında yapılacak işlemler
-                        },
-                        icon: Icon(Icons.thumb_down),
-                        color: Color(0xFF171212), // Dislike butonunun rengi
-                        iconSize: 20,
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          // Share butonuna basıldığında yapılacak işlemler
-                        },
-                        icon: Icon(Icons.share),
-                        color: Color(0xFF171212), // Share butonunun rengi
-                        iconSize: 20,
-                      ),
-                      Text(
-                        'Share', // Share butonunun altında metin
-                        style: TextStyle(fontSize: 17, color: Color(0xFF171212)), // Share metni rengi
-                      ),
-                      IconButton(
-                        onPressed: () {
-                          // Download butonuna basıldığında yapılacak işlemler
-                        },
-                        icon: Icon(Icons.download),
-                        color: Color(0xFF171212), // Download butonunun rengi
-                        iconSize: 20,
-                      ),
-                      Text(
-                        'Download', // Download butonunun altında metin
-                        style: TextStyle(fontSize: 17, color: Color(0xFF171212)), // Download metni rengi
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Comments   194', // Comments başlığı ve sayısı
-                    style: TextStyle(fontSize: 16),
-                  ),
+
                   SizedBox(height: 8),
-                  Card(
-                    elevation: 4,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Bedirhan',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('Pişmanlık değil hocam'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 16),
                  SizedBox(
               child: Column(
                 children: [
@@ -179,7 +319,7 @@ class VideoPlayerPage extends StatelessWidget {
                             onPressed: () {},
                             child: const Text(
                               '6:24',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Color(0xFFFFFFFF)),
                             ),
                           ),
                         ),
@@ -207,7 +347,7 @@ class VideoPlayerPage extends StatelessWidget {
                             Text(
                               'Don Omar-Danza Kuduro',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 17),
+                                  TextStyle(color: Color(0xFFFFFFFF), fontSize: 17),
                             ),
                             Padding(
                               padding:
@@ -215,7 +355,7 @@ class VideoPlayerPage extends StatelessWidget {
                               child: Text(
                                 'Don Omar 201M views 7 years ago',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 14),
+                                    color: Color(0xFFFFFFFF), fontSize: 14),
                               ),
                             ),
                           ],
@@ -262,7 +402,7 @@ class VideoPlayerPage extends StatelessWidget {
                             onPressed: () {},
                             child: const Text(
                               '4:25',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Color(0xFFFFFFFF)),
                             ),
                           ),
                         ),
@@ -290,7 +430,7 @@ class VideoPlayerPage extends StatelessWidget {
                             Text(
                               'Gangnam Style-(Acustic)',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 17),
+                                  TextStyle(color: Color(0xFFFFFFFF), fontSize: 17),
                             ),
                             Padding(
                               padding:
@@ -298,7 +438,7 @@ class VideoPlayerPage extends StatelessWidget {
                               child: Text(
                                 'ÇanÇinÇon 2M views 13 years ago',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 14),
+                                    color: Color(0xFFFFFFFF), fontSize: 14),
                               ),
                             ),
                           ],
@@ -344,7 +484,7 @@ class VideoPlayerPage extends StatelessWidget {
                             onPressed: () {},
                             child: const Text(
                               '7:23',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Color(0xFFFFFFFF)),
                             ),
                           ),
                         ),
@@ -372,7 +512,7 @@ class VideoPlayerPage extends StatelessWidget {
                             Text(
                               'Web Design Serüvenim',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 17),
+                                  TextStyle(color: Color(0xFFFFFFFF), fontSize: 17),
                             ),
                             Padding(
                               padding:
@@ -380,7 +520,7 @@ class VideoPlayerPage extends StatelessWidget {
                               child: Text(
                                 'Uğur Akın 38 views 3 hourss ago',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 14),
+                                    color: Color(0xFFFFFFFF), fontSize: 14),
                               ),
                             ),
                           ],
@@ -407,6 +547,7 @@ class VideoPlayerPage extends StatelessWidget {
           ],
         ),
       ),
+    ])
     );
   }
 }
