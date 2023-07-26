@@ -112,14 +112,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       title: const Text(
         'Youtube',
-        style: TextStyle(color: Colors.white, fontSize: 20.0),
       ),
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const ImageIcon(
-            AssetImage(MyImageStrings.appBarConnectToDevice),
-            size: 250.0,
+          icon: const Icon(
+            Icons.cast,
             color: Colors.white,
           ),
         ),
@@ -132,9 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             );
           },
-          icon: const ImageIcon(
-            AssetImage(MyImageStrings.appBarNotification),
-            size: 250.0,
+          icon: const Icon(
+            Icons.notifications_none_rounded,
             color: Colors.white,
           ),
         ),
@@ -143,9 +140,8 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const SearchPage()));
           },
-          icon: const ImageIcon(
-            AssetImage(MyImageStrings.appBarSearch),
-            size: 250.0,
+          icon: const Icon(
+            Icons.search,
             color: Colors.white,
           ),
         ),
