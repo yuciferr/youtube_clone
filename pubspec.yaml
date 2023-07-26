@@ -71,7 +71,7 @@ flutter:
     - assets/icons/bottom_model_sheet_icons/
     - assets/icons/shorts_icons/
     - assets/images/video_player_page_images/
-    - assets/videos/
+    
 
   # To add assets to your application, add an assets section, like this:
 
