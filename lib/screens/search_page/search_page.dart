@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
+import 'package:youtube_clone/screens/search_page/search_result_page.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -28,8 +29,9 @@ class _SearchPageState extends State<SearchPage> {
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: TextField(
               style: TextStyle(
-                  color: MyColors.white,
-                  fontSize: 16,),
+                color: MyColors.white,
+                fontSize: 16,
+              ),
               decoration: InputDecoration(
                 hintText: 'Search YouTube',
                 hintStyle: TextStyle(
@@ -78,7 +80,12 @@ class SearchItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SearchResultPage()));
+        },
         leading: const Icon(
           Icons.history_outlined,
           color: MyColors.white,
