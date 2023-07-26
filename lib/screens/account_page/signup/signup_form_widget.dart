@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
 import '../login/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:youtube_clone/auth.dart';
 
-class SignUpFormWidget extends StatelessWidget {
+class SignUpFormWidget extends StatefulWidget {
   const SignUpFormWidget({
     super.key,
   });
+
+  @override
+  State<SignUpFormWidget> createState() => _SignUpFormWidgetState();
+}
+
+class _SignUpFormWidgetState extends State<SignUpFormWidget> {
+  bool _isAccountCreated = false;
+  String _errorMessage = '';
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> createUserWithEmailAndPassword() async {
+    try {
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+      _isAccountCreated = true;
+    } on FirebaseAuthException catch (e) {
+      _errorMessage = e.message!;
+      print(e);
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +61,7 @@ class SignUpFormWidget extends StatelessWidget {
               height: 15,
             ),
             TextFormField(
+              controller: _emailController,
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
@@ -77,6 +103,7 @@ class SignUpFormWidget extends StatelessWidget {
               height: 15,
             ),
             TextFormField(
+              controller: _passwordController,
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
@@ -99,10 +126,18 @@ class SignUpFormWidget extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginScreenOfYoutube()));
+                  createUserWithEmailAndPassword();
+                  if(_isAccountCreated){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreenOfYoutube()));
+                  }
+                  if (_errorMessage != "") {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(_errorMessage),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  }
                 },
                 child: Text(
                   "Signup".toUpperCase(),

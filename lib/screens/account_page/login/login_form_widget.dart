@@ -25,6 +25,7 @@ class _LoginFormState extends State<LoginForm> {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text, password: _passwordController.text);
+      isLogin = true;
     } on FirebaseAuthException catch (e) {
       _errorMessage = e.message!;
     }
@@ -114,10 +115,22 @@ class _LoginFormState extends State<LoginForm> {
               child: ElevatedButton(
                 onPressed: () {
                   signInWithEmailAndPassword();
-                  // Navigator.popUntil(context, (route) => ); Main screen e kadar
-                  setState(() {
-                    isLogin = !isLogin;
-                  });
+                  if (_errorMessage != "") {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(_errorMessage),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  }
+                  if(isLogin) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNav(),
+                      ),
+                    );
+                  }
                 },
                 child: Text(
                   'Login'.toUpperCase(),
