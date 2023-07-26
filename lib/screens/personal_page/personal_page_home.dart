@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/commons/base_app_bar.dart';
 import 'package:youtube_clone/screens/personal_page/channel_about_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_channels_page.dart';
 import 'package:youtube_clone/screens/personal_page/channel_community_page.dart';
@@ -20,29 +21,7 @@ class _PersonalPageHomeState extends State<PersonalPageHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: const Text('Channel Name'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.cast),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      appBar: BaseAppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
