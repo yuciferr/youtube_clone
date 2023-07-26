@@ -176,15 +176,89 @@ return Scaffold(
                                     crossAxisAlignment: CrossAxisAlignment.stretch,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.all(16.0),
+                                        padding: const EdgeInsets.all(16.0),                                     
                                         child: Text(
                                           'Comments   194',
                                           style: TextStyle(fontSize: 22),
                                         ),
                                       ),
-                                      // Add your comment widgets here
+                                    SizedBox(height: 10),
+                  // Add your other content here
+
+                  // Comments
+                  Text(
+                    "Bedirhan : Pişmanlık değil hocam.",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          // Handle like button press
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.thumb_up, size: 18),
+                            SizedBox(width: 5),
+                            Text('Like', style: TextStyle(fontSize: 16)),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      // Add other buttons or info here
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Onur : Doğru",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          // Handle like button press
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.thumb_up, size: 18),
+                            SizedBox(width: 5),
+                            Text('Like', style: TextStyle(fontSize: 16)),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      // Add other buttons or info here
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Serhan : Backend iyidir.",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  SizedBox(height: 10),
+                  
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          // Handle like button press
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.thumb_up, size: 18),
+                            SizedBox(width: 5),
+                            Text('Like', style: TextStyle(fontSize: 16)),
+                          ],
+                        ),
+                      ),
+
                                     ],
                                   ),
+                    ],
+                    ),
                                 ),
                               );
                             },
