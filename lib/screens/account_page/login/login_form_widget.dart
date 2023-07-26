@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/screens/home_screen/home_screen.dart';
 
+import '../../home_screen/main_with_bottom_navbar.dart';
 import '../forgot_password/forgot_password_model_bottom_sheet.dart';
 
 class LoginForm extends StatefulWidget {
@@ -21,8 +22,11 @@ class _LoginFormState extends State<LoginForm> {
         });
       },
       icon: _isPasswordVisible
-          ? const Icon(Icons.visibility)
-          : const Icon(Icons.visibility_off),
+          ? const Icon(
+              Icons.visibility,
+              color: Colors.white,
+            )
+          : const Icon(Icons.visibility_off, color: Colors.white),
     );
   }
 
@@ -36,9 +40,18 @@ class _LoginFormState extends State<LoginForm> {
           children: [
             TextFormField(
               decoration: const InputDecoration(
-                prefixIcon: Icon(Icons.person_outline_outlined),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
+                ),
+                focusColor: Colors.white,
+                prefixIcon: Icon(
+                  Icons.person_outline_outlined,
+                  color: Colors.white,
+                ),
                 labelText: "E-mail",
                 hintText: "E-mail",
+                labelStyle: TextStyle(color: Colors.white),
+                hintStyle: TextStyle(color: Colors.white),
                 border: OutlineInputBorder(),
               ),
             ),
@@ -48,11 +61,16 @@ class _LoginFormState extends State<LoginForm> {
             TextFormField(
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.fingerprint),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
+                ),
+                prefixIcon: const Icon(Icons.fingerprint, color: Colors.white),
                 labelText: "Password",
                 hintText: "Password",
                 border: const OutlineInputBorder(),
                 suffixIcon: _buildSuffixIcon(),
+                labelStyle: const TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(color: Colors.white),
               ),
             ),
             const SizedBox(
@@ -64,7 +82,10 @@ class _LoginFormState extends State<LoginForm> {
                 onPressed: () {
                   ForgotPasswordScreen.buildShowModalBottomSheet(context);
                 },
-                child: const Text('Forget Password?'),
+                child: const Text(
+                  'Forget Password?',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             SizedBox(
@@ -75,7 +96,7 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
+                      builder: (context) => const BottomNav(),
                     ),
                   );
                 },

@@ -12,7 +12,7 @@ class LoginScreenOfYoutube extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       // backgroundColor: Theme.of(context).colorScheme.background,
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         // childini scrollable yapıyor
         child: Container(
