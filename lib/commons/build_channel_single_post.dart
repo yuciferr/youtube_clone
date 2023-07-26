@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
-import 'package:youtube_clone/screens/video_list_page/video_list_page.dart';
+
+import '../screens/video_list_page/video_list_page.dart';
 
 class BuildChannelSinglePost extends StatelessWidget {
   const BuildChannelSinglePost(
@@ -22,31 +23,25 @@ class BuildChannelSinglePost extends StatelessWidget {
         children: [
           Stack(
             children: [
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>VideoPlayerPage()));
-                },
-                child: SizedBox(
-                  width: 300,
-                  height: 200,
-                  child: Image.asset(
-                    postImage, // Resmi tamamen kaplayacak şekilde düzenledik
+              Container(
+                margin: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.grey.withOpacity(0.1),
+                ),
+                child: Expanded(
+                  child: TextButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>VideoPlayerPage()));},child: Image.network(postImage),
                   ),
                 ),
               ),
               Positioned(
-                bottom: 0, // Align at the bottom
-                right: 0, // Align at the right
-                child: Container(
-                  color: MyColors.greyButton,
-                  // padding: const EdgeInsets.all(
-                  //     8), // Adding some padding around the text
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      '10:00',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                bottom: 10,
+                right: 10,
+                child: Text(
+                  '20:43',
+                  style: TextStyle(
+                    color: MyColors.white,
+                    backgroundColor: Colors.black.withOpacity(0.5),
                   ),
                 ),
               ),
@@ -69,14 +64,14 @@ class BuildChannelSinglePost extends StatelessWidget {
                   children: [
                     Text(
                       postDescription,
-                      style: const TextStyle(color: Colors.white, fontSize: 17),
+                      style: const TextStyle(color: Colors.white, fontSize: 14),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Text(
                         channelDescription,
                         style: const TextStyle(
-                            color: Colors.white70, fontSize: 14),
+                            color: Colors.white70, fontSize: 12),
                       ),
                     ),
                   ],
