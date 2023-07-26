@@ -56,12 +56,12 @@ class _LoginFormState extends State<LoginForm> {
           children: [
             TextFormField(
               controller: _emailController,
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.white),
                 ),
                 focusColor: Colors.white,
-                fillColor: Colors.white,
                 prefixIcon: Icon(
                   Icons.person_outline_outlined,
                   color: Colors.white,
@@ -79,6 +79,7 @@ class _LoginFormState extends State<LoginForm> {
             TextFormField(
               controller: _passwordController,
               obscureText: !_isPasswordVisible,
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 fillColor: Colors.white,
                 labelStyle: const TextStyle(color: Colors.white),

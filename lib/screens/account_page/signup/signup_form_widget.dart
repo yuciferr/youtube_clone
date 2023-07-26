@@ -1,38 +1,10 @@
 import 'package:flutter/material.dart';
 import '../login/login_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:youtube_clone/auth.dart';
 
-class SignUpFormWidget extends StatefulWidget {
+class SignUpFormWidget extends StatelessWidget {
   const SignUpFormWidget({
     super.key,
   });
-
-  @override
-  State<SignUpFormWidget> createState() => _SignUpFormWidgetState();
-}
-
-class _SignUpFormWidgetState extends State<SignUpFormWidget> {
-  bool _isAccountCreated = false;
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  Future<void> createUserWithEmailAndPassword() async {
-    try {
-      await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
-
-    } on FirebaseAuthException catch (e) {
-      // if (e.code == 'weak-password') {
-      //   print('The password provided is too weak.');
-      // } else if (e.code == 'email-already-in-use') {
-      //   print('The account already exists for that email.');
-      // }
-      print(e);
-    } catch (e) {
-      print(e);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +14,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
         child: Column(
           children: [
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -63,7 +36,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               height: 15,
             ),
             TextFormField(
-              controller: _emailController,
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -85,6 +58,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               height: 15,
             ),
             TextFormField(
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -103,7 +77,7 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               height: 15,
             ),
             TextFormField(
-              controller: _passwordController,
+              style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
                 labelStyle: TextStyle(color: Colors.white),
                 hintStyle: TextStyle(color: Colors.white),
@@ -125,13 +99,10 @@ class _SignUpFormWidgetState extends State<SignUpFormWidget> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  createUserWithEmailAndPassword();
-                  setState(() {
-                    _isAccountCreated = true;
-                  });
-                  if(_isAccountCreated){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginScreenOfYoutube()));
-                  }
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreenOfYoutube()));
                 },
                 child: Text(
                   "Signup".toUpperCase(),
