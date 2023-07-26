@@ -24,7 +24,7 @@ class LoginHeaderWidget extends StatelessWidget {
         ),
         Text(
           'Make it work, make it right, make it fast.',
-          style: Theme.of(context).textTheme.labelMedium,
+          style: TextStyle(color: Colors.white),
         ),
       ],
     );

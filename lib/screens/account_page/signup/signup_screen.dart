@@ -26,9 +26,8 @@ class _SignupState extends State<Signup> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const FormHeaderWidget(
-                  image:
-                      'https://w7.pngwing.com/pngs/208/269/png-transparent-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-logo.png',
-                  subtitle: 'fdfd',
+                  image: 'https://img.icons8.com/?size=512&id=19318&format=png',
+                  subtitle: 'Enter your information',
                   imageHeight: 0.3,
                 ),
                 const SizedBox(
