@@ -125,36 +125,12 @@ class _AccountPageState extends State<AccountPage> {
                   // color: Colors.white,
                   child: TextButton.icon(
                     onPressed: () {},
-                    icon: const ImageIcon(NetworkImage(
-                        'https://logospng.org/wp-content/uploads/youtube-premium.png')),
-                    label: const Text(
-                      'Get Youtube Premium',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    icon: const Icon(
+                      Icons.logout,
+                      color: Colors.white,
                     ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  // color: Colors.white,
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const ImageIcon(NetworkImage(
-                        'https://logospng.org/wp-content/uploads/youtube-premium.png')),
                     label: const Text(
-                      'Get Youtube Premium',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  // color: Colors.white,
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const ImageIcon(NetworkImage(
-                        'https://logospng.org/wp-content/uploads/youtube-premium.png')),
-                    label: const Text(
-                      'Get Youtube Premium',
+                      'Log out',
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),

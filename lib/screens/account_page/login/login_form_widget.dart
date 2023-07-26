@@ -21,8 +21,8 @@ class _LoginFormState extends State<LoginForm> {
 
   Future<void> signInWithEmailAndPassword() async {
     try {
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _emailController.text, password: _passwordController.text);
     } on FirebaseAuthException catch (e) {
       // if (e.code == 'user-not-found') {
       //   print('No user found for that email.');
@@ -35,8 +35,8 @@ class _LoginFormState extends State<LoginForm> {
 
   Future<void> createUserWithEmailAndPassword() async {
     try {
-      await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text, password: _passwordController.text);
     } on FirebaseAuthException catch (e) {
       // if (e.code == 'weak-password') {
       //   print('The password provided is too weak.');
@@ -80,6 +80,7 @@ class _LoginFormState extends State<LoginForm> {
                   borderSide: BorderSide(color: Colors.white),
                 ),
                 focusColor: Colors.white,
+                fillColor: Colors.white,
                 prefixIcon: Icon(
                   Icons.person_outline_outlined,
                   color: Colors.white,
@@ -98,6 +99,7 @@ class _LoginFormState extends State<LoginForm> {
               controller: _passwordController,
               obscureText: !_isPasswordVisible,
               decoration: InputDecoration(
+                fillColor: Colors.white,
                 labelStyle: const TextStyle(color: Colors.white),
                 hintStyle: const TextStyle(color: Colors.white),
                 focusedBorder: const OutlineInputBorder(
@@ -129,7 +131,9 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  isLogin ? signInWithEmailAndPassword() : createUserWithEmailAndPassword();
+                  isLogin
+                      ? signInWithEmailAndPassword()
+                      : createUserWithEmailAndPassword();
                   // Navigator.popUntil(context, (route) => ); Main screen e kadar
                   setState(() {
                     isLogin = !isLogin;
