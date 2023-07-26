@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/commons/base_app_bar.dart';
 import 'package:youtube_clone/screens/all_subscriptions_page/all_subscriptions_page.dart';
 
 import '../../commons/build_card_pages_scrollable_channels.dart';
@@ -6,7 +7,6 @@ import '../../commons/build_channel_single_post.dart';
 import '../../constants/image_strings.dart';
 import '../../constants/text_strings.dart';
 import '../personal_page/personal_page_home.dart';
-import '../search_page/search_page.dart';
 
 class SubscriptionsScreen extends StatefulWidget {
   const SubscriptionsScreen({super.key});
@@ -19,7 +19,7 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: BaseAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -156,63 +156,6 @@ class _SubscriptionsScreenState extends State<SubscriptionsScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  AppBar buildAppBar() {
-    return AppBar(
-      leading: TextButton(
-        onPressed: () {
-          // veri çekme isteği atılacak
-        },
-        child: Image.asset(MyImageStrings.appBarYoutubeLogo),
-      ),
-      title: const Text(
-        'Youtube',
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.cast,
-            color: Colors.white,
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SubscriptionsScreen(),
-              ),
-            );
-          },
-          icon: const Icon(
-            Icons.notifications_none_rounded,
-            color: Colors.white,
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SearchPage()));
-          },
-          icon: const Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
-        ),
-        TextButton(
-          onPressed: () {
-            // User Profile gidecek
-          },
-          child: Image.asset(
-            MyImageStrings.appBarUserProfileImage,
-            height: 33,
-            width: 33,
-          ),
-        ),
-      ],
     );
   }
 }

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/commons/base_app_bar.dart';
 import 'package:youtube_clone/constants/colors.dart';
 import 'package:youtube_clone/constants/image_strings.dart';
 import 'package:youtube_clone/constants/text_strings.dart';
-import 'package:youtube_clone/screens/home_screen/subscriptions_screen.dart';
 
 import '../../commons/build_card_pages_scrollable_channels.dart';
 import '../../commons/build_channel_single_post.dart';
-import '../search_page/search_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: BaseAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -99,63 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-    );
-  }
-
-  AppBar buildAppBar() {
-    return AppBar(
-      leading: TextButton(
-        onPressed: () {
-          // veri çekme isteği atılacak
-        },
-        child: Image.asset(MyImageStrings.appBarYoutubeLogo),
-      ),
-      title: const Text(
-        'Youtube',
-      ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.cast,
-            color: Colors.white,
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SubscriptionsScreen(),
-              ),
-            );
-          },
-          icon: const Icon(
-            Icons.notifications_none_rounded,
-            color: Colors.white,
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SearchPage()));
-          },
-          icon: const Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
-        ),
-        TextButton(
-          onPressed: () {
-            // User Profile gidecek
-          },
-          child: Image.asset(
-            MyImageStrings.appBarUserProfileImage,
-            height: 33,
-            width: 33,
-          ),
-        ),
-      ],
     );
   }
 }

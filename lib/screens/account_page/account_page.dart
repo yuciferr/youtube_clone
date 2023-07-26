@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:youtube_clone/constants/image_strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:youtube_clone/auth.dart';
-
+import 'package:flutter/material.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -21,6 +18,7 @@ class _AccountPageState extends State<AccountPage> {
       print(e);
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,7 +135,10 @@ class _AccountPageState extends State<AccountPage> {
                   // color: Colors.white,
                   child: TextButton.icon(
                     onPressed: () {
-                      signOut();
+                      setState(() {
+                        signOut();
+                        Navigator.pop(context);
+                      });
                     },
                     icon: const Icon(
                       Icons.logout,
