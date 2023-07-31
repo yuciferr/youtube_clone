@@ -3,7 +3,7 @@ import 'package:youtube_clone/constants/colors.dart';
 
 Widget commentsBottomSheet(BuildContext context) {
   return Container(
-      height: MediaQuery.of(context).size.height * 0.7,
+      height: MediaQuery.of(context).size.height * 0.6,
       color: MyColors.blackMain,
       child: Container(
         decoration: const BoxDecoration(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/constants/colors.dart';
-import 'package:youtube_clone/screens/account_page/login/login_screen.dart';
-import 'package:youtube_clone/screens/home_screen/main_with_bottom_navbar.dart';
 import 'package:youtube_clone/widget_tree.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -104,7 +102,6 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
         ),
-        accentColor: MyColors.blueTextButton,
         buttonTheme: const ButtonThemeData(
           // buttonColor: MyColors.redButton,
           // textTheme: ButtonTextTheme.primary,
@@ -113,7 +110,7 @@ class MyApp extends StatelessWidget {
               Radius.circular(4),
             ),
           ),
-        ),
+        ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MyColors.blueTextButton),
       ),
       home: const WidgetTree(),
     );
